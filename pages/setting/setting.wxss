@@ -1,0 +1,17 @@
+.root{
+    font-family: simhei;
+    font-size: 34rpx;
+    color: #353535;
+    background: #f1f1f1;
+}
+.picker-view{
+    margin-top:20rpx;
+    height:300rpx;
+}
+.view-workturndetail{
+    font-size: 26rpx;
+    margin-top: 20rpx;
+    padding:30rpx;
+    height: 400rpx;
+    background: #fff;
+}

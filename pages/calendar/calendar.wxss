@@ -1,0 +1,134 @@
+.calendar-root{
+    font-family: simhei;
+    font-size: 34rpx;
+    color: #353535;
+    background: #f1f1f1;
+}
+
+.calendar-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    height: 70rpx;
+}
+.calendar-navbar-button{
+    flex-grow: 1;
+    width: 100rpx;
+    height: 70rpx;
+    line-height:70rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+.calendar-navbar-date{
+    flex-grow: 1;
+    width: 150rpx;
+    height: 70rpx;
+    line-height:70rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.calendar-head{
+    border-top: solid 0.5rpx #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rpx;
+    background: #fff;
+    font-size: 35rpx;
+}
+.calendar-head view{
+    text-align: center;
+    flex:1;
+}
+
+.calendar-body{
+    margin-top: 10rpx;
+    background: #f1f1f1;
+}
+.calendar-body-rows{
+    display: flex;
+    align-items: center;
+    height: 98rpx;
+    padding: 0 4rpx 8rpx;
+}
+.calendar-body-cols{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 100%;
+    padding: 0 4rpx;
+}
+.calendar-body-item{
+    position:relative;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+.calendar-body-day{
+    position: absolute;
+    left: 10rpx;
+    top: 10rpx;
+    text-align: center;
+}
+.calendar-body-dayex{
+    position: absolute;
+    left: 10rpx;
+    top: 60rpx;
+    text-align: center;
+    font-size: 25rpx;
+}
+.calendar-body-workturn{
+    text-align: center;
+    font-size: 25rpx;
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+}
+
+.calendar-detail{
+    background: #fff;
+    height: 135rpx;
+}
+.calendar-detail-day{
+    position: absolute;
+    margin-left: 80rpx;
+    font-size: 108rpx;
+    font-weight: bold;
+    color: #e64340;
+}
+.calendar-detail-info1{
+    position: absolute;
+    margin-top: 30rpx;
+    margin-left: 230rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.calendar-detail-info2{
+    position: absolute;
+    margin-top: 80rpx;
+    margin-left: 230rpx;
+    font-size: 28rpx;
+}
+
+.calendar-workturn{
+    margin-top: 10rpx;
+    height: 140rpx;
+    text-align: center;
+}
+.calendar-workturn-date-picker{
+    position:relative;
+    background:#fff;
+    height:60rpx;
+}
+.calendar-workturn-type-picker{
+    position:relative;
+    top:10rpx;
+    background:#fff;
+    height:60rpx;
+}
+
+.view-hover{
+    background:#eee;
+}

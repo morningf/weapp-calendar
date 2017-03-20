@@ -1,0 +1,6 @@
+.about-content{
+    margin: 20rpx 60rpx 10rpx 60rpx;
+    font-size: 30rpx;
+    font-weight: normal;
+    text-indent: 2em;
+}

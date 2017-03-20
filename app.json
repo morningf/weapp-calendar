@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/calendar/calendar",
+    "pages/setting/setting",
+    "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "倒班日历",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#353535",
+    "selectedColor": "#09BB07",
+    "list":[
+      {
+        "text": "日历",
+        "pagePath": "pages/calendar/calendar",
+        "iconPath": "res/calendar-normal.png",
+        "selectedIconPath": "res/calendar-selected.png"
+      },
+      {
+        "text": "关于",
+        "pagePath": "pages/about/about",
+        "iconPath": "res/about-normal.png",
+        "selectedIconPath": "res/about-selected.png"
+      }
+    ]
+  }
+}

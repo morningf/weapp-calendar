@@ -1,0 +1,33 @@
+<view class="root">
+  <view style="text-align:center;height:50rpx;line-height:50rpx;background:#fff;">滑动下方选择倒班方式</view>
+  <picker-view indicator-style="height:30px;" class="picker-view" value="{{[selectedTypeIndex]}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{arrTypeName}}" wx:key="index" style="line-height:30px;text-align:center;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+  <view class="view-workturndetail" style="display:{{showTypeDetail?'block':'none'}}">
+    <view style="font-size:34rpx;">{{arrTypeName[selectedTypeIndex]}}</view>
+    <view style="margin-top:15rpx;">{{typeDetailStr}}</view>
+    <view style="margin-top:15rpx;">{{arrTypeDetail[selectedTypeIndex]}}</view>
+  </view>
+  <view class="view-workturndetail" style="display:{{!showTypeDetail?'block':'none'}}">
+    <view style="font-size:34rpx;">{{arrTypeName[selectedTypeIndex]}}</view>
+    <view style="margin-top:15rpx;">使用下面的小按钮按您的上班次序输入一个周期的倒班情况，比如您是上一天白班、一天夜班然后休息两天，则应该按次序按下：白班、夜班、休息、休息。</view>
+    <view style="margin-top:15rpx;">[开始]{{arrTypeDetail[selectedTypeIndex]}}[结束]</view>
+    <view style="margin-top:35rpx;">
+        <button style="margin:10rpx;" size="mini" type="default" data-str="白" bindtap="addTap">白班</button>
+        <button style="margin:10rpx;" size="mini" type="default" data-str="中" bindtap="addTap">中班</button>
+        <button style="margin:10rpx;" size="mini" type="default" data-str="夜" bindtap="addTap">夜班</button>
+        <button style="margin:10rpx;" size="mini" type="default" data-str="全" bindtap="addTap">全天</button>
+    </view>
+    <view style="margin-top:15rpx;">
+        <button style="margin:10rpx;" size="mini" type="warn" bindtap="deleteTap">退格</button>
+        <button style="margin:10rpx;" size="mini" type="warn" bindtap="clearTap">清空</button>
+        <button style="margin:10rpx;" size="mini" type="primary" data-str="休" bindtap="addTap">休息</button>
+    </view>
+  </view>
+  <button type="primary" style="margin-top:20rpx;" bindtap="okTap">应用此设置</button>
+  <view style="height:50rpx;margin-top:20rpx;background:#fff;">
+
+  </view>
+</view>
