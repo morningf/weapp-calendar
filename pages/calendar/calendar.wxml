@@ -34,9 +34,10 @@
         <view class="calendar-detail-day">{{detailData.curDay}}</view>
         <view class="calendar-detail-info1">{{detailData.curInfo1}}</view>
         <view class="calendar-detail-info2">{{detailData.curInfo2}}</view>
+        <view class="calendar-detail-info3" hidden="{{!isWorkTurn}}" style="color:{{detailData.curInfo3 === '休' ? '#09BB07' : '#e64340'}}">{{detailData.curInfo3}}</view>
     </view>
     <view class="calendar-workturn">
-        <picker bindchange="bindWorkTurnDatePickerChange" mode="date" value="{{date}}" start="1900-01-01" end="2100-01-01">
+        <picker bindchange="bindWorkTurnDatePickerChange" mode="date" value="{{date}}" start="2000-01-01" end="2050-12-31">
             <view class="calendar-workturn-date-picker" hover="true" hover-class="view-hover">
                 <image style="position:absolute;top:13rpx;left:40rpx;width:34rpx;height:34rpx;" src="../../res/clock.png"></image>
                 <view style="position:absolute;line-height:60rpx;left:90rpx;font-size:34rpx;">开始上班日期：{{workTurnData.startWorkDateString}}</view>

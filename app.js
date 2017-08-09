@@ -10,7 +10,11 @@ App({
         index = 0;
     var startWorkDate = wx.getStorageSync('startWorkDate');
     if (!startWorkDate)
-      startWorkDate = new Date();
+    {
+        startWorkDate = new Date();
+        startWorkDate.setHours(0, 0, 0, 0);
+    }
+      
     
     this.globalData.startWorkDate = startWorkDate;
     this.globalData.workTurnTypeName = this.globalData.arrTypeName[index];

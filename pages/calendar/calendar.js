@@ -50,6 +50,7 @@ var pageData = {
         curDay: "",         //detail中显示的日信息
         curInfo1: "",
         curInfo2: "",
+        curInfo3: "",
     },
     
     isWorkTurn: app.globalData.workTurnType.length != 0,
@@ -71,7 +72,16 @@ var getOffset = function()
 }
 
 //设置当前详细信息的索引，前台的详细信息会被更新
+var lastRefreshDetailDataIndex = 0;
 var refreshDetailData = function(index){
+    if (index == null)
+    {
+        index = lastRefreshDetailDataIndex
+    }
+    else
+    {
+        lastRefreshDetailDataIndex = index;
+    }
     var curEx = pageData.dateData.arrInfoEx[index];
     if (!curEx)
         return;
@@ -79,6 +89,7 @@ var refreshDetailData = function(index){
     pageData.detailData.curDay = curEx.sDay;
     pageData.detailData.curInfo1 = "农历" + curEx.lunarMonth + "月" + curEx.lunarDay + " " + curEx.lunarFestival;
     pageData.detailData.curInfo2 = curEx.cYear+curEx.lunarYear + "年 " + curEx.cMonth + "月 " + curEx.cDay + "日";
+    pageData.detailData.curInfo3 = pageData.workTurnData.arrWorkTurn[index];
 }
 
 var getWorkTurnDayInfo = function(d){
@@ -102,7 +113,7 @@ var refreshWorkTurnData = function(){
     {
         if (i < offset || i >= offset2)
             continue;
-        var d = new Date(curYear, curMonth, i - offset + 1);    
+        var d = new Date(curYear, curMonth, i - offset + 1);
         pageData.workTurnData.arrWorkTurn[i] = getWorkTurnDayInfo(d);
     }
 }
@@ -139,9 +150,8 @@ var refreshPageData = function(year, month, day){
             pageData.dateData.arrInfoExShow[i] = dEx.lunarDay;
         }
     }
-
+    refreshWorkTurnData();  
     refreshDetailData(offset + day - 1);
-    refreshWorkTurnData();    
 };
 
 var refreshStartWorkDateString = function(){
@@ -166,14 +176,16 @@ Page({
     },
     onShow: function() {
         pageData.isWorkTurn = app.globalData.workTurnType.length != 0;
-        pageData.workTurnTypeName = app.globalData.workTurnTypeName,
+        pageData.workTurnTypeName = app.globalData.workTurnTypeName;
         pageData.workTurnType = app.globalData.workTurnType;
         refreshWorkTurnData();
+        refreshDetailData();
         this.setData({
             isWorkTurn: pageData.isWorkTurn,
             workTurnTypeName : pageData.workTurnTypeName,
             workTurnType : pageData.workTurnType,
             workTurnData: pageData.workTurnData,
+            detailData: pageData.detailData,
         })
     },
     onShareAppMessage: function () {
@@ -263,8 +275,10 @@ Page({
         //将开始上班日期信息存储起来
         wx.setStorageSync("startWorkDate", pageData.workTurnData.startWorkDate);
         refreshWorkTurnData();
+        refreshDetailData();
         this.setData({
             workTurnData: pageData.workTurnData,
+            detailData: pageData.detailData,
         })
     },
 });

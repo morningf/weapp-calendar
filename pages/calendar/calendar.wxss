@@ -112,6 +112,13 @@
     font-size: 28rpx;
 }
 
+.calendar-detail-info3{
+    position: absolute;
+    margin-top: 20rpx;
+    margin-left: 630rpx;
+    font-size: 70rpx;
+}
+
 .calendar-workturn{
     margin-top: 10rpx;
     height: 140rpx;

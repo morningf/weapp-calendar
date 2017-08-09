@@ -11,4 +11,7 @@
     <view class="about-content">
         作者微信:figcap
     </view>
+    <view style="text-align:center; margin-top:60rpx;margin-bottom:30rpx;">
+      <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+    </view>
 </view>
